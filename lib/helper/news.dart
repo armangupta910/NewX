@@ -11,11 +11,13 @@ class News {
 
 Future<void> getNews() async {
 
-  final url = Uri.parse("https://newsapi.org/v2/top-headlines?country=eg&apiKey=1fc11498ab22409f8bc4f281b9ddd3d7");
+  final url = Uri.parse("https://newsapi.org/v2/top-headlines?country=us&apiKey=f69d8d148dce4b138ed4f441a78e6d6a");
 
   var response = await http.get(url);
 
   var jsonData = jsonDecode(response.body);
+
+  print(jsonData);
 
 
   if(jsonData['status'] == "ok"){
@@ -30,7 +32,7 @@ Future<void> getNews() async {
           url: element['url'],
           urlToImage: element['urlToImage'],
           // publishedAt: element['publishedAt'],
-          content: element['content']
+          // content: element['content']
         );
         news.add(articaleModel);
       }
@@ -51,7 +53,7 @@ class CategoriesNews {
 
 Future<void> getNews(String category) async {
 
-  final url = Uri.parse("https://newsapi.org/v2/top-headlines?category=$category&country=eg&apiKey=1fc11498ab22409f8bc4f281b9ddd3d7");
+  final url = Uri.parse("https://newsapi.org/v2/everything?q=$category&sortBy=popularity&apiKey=f69d8d148dce4b138ed4f441a78e6d6a");
 
   var response = await http.get(url);
 
@@ -70,7 +72,7 @@ Future<void> getNews(String category) async {
           url: element['url'],
           urlToImage: element['urlToImage'],
           // publishedAt: element['publishedAt'],
-          content: element['content']
+          // content: element['content']
         );
         news.add(articaleModel);
       }

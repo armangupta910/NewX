@@ -95,7 +95,7 @@ bool _loading = true;
               children: [
                  Container(
                 padding:const EdgeInsets.symmetric(vertical: 5 , horizontal: 5),
-                child:const Text('العناون الرئيسية', 
+                child:const Text('Headlines', 
                 style:TextStyle(
                   color: Colors.red,
                   fontSize: 25,

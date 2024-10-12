@@ -5,7 +5,7 @@ class ArticaleModel{
   String description;
   String url ;
   String urlToImage;
-  String content;
+  // String content;
   // DateTime publishedAt ;
 
   ArticaleModel({
@@ -14,7 +14,7 @@ class ArticaleModel{
     required this.description ,
     required this.url , 
     required this.urlToImage , 
-    required this.content,
+    // required this.content,
     // required this.publishedAt
     });
 
